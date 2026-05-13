@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@actions/core": "^2.0.0",
-    "axios": "^1.15.2"
+    "axios": "^1.16.1"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.3"
