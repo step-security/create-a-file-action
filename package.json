@@ -1,16 +1,16 @@
 {
   "name": "create-a-file-action",
-  "version": "0.4.5",
+  "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:step-security/create-a-file-action.git",
   "author": "step-security",
   "license": "MIT",
-  "scripts": {
-    "build": "ncc build index.js -o dist"
-  },
   "dependencies": {
     "@actions/core": "^2.0.0",
     "axios": "^1.15.2"
+  },
+  "scripts": {
+    "build": "ncc build index.js -o dist"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.3"
