@@ -1,4 +1,4 @@
-# Managed by action-pack — see docs/upstream-sync-design.md
+# StepSecurity maintained-action metadata — do not edit by hand unless needed
 schema_version: 1
 mode: import
 upstream: 1arp/create-a-file-action
