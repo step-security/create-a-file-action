@@ -1,7 +1,7 @@
 name: 'Create A File'
 description: 'Create a file'
 branding:
-  icon: 'file'
+  icon: 'file'  
   color: 'green'
 inputs:
   path:
@@ -21,4 +21,4 @@ inputs:
     default: ''
 runs:
   using: 'node24'
-  main: 'dist/index.js'
+  main: 'index.js'

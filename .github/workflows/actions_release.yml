@@ -7,9 +7,13 @@ on:
         description: "Tag for the release"
         required: true
       node_version:
-        description: "Node.js version to use"
+        description: "Node.js version"
         required: false
         default: "24"
+      script:
+        description: "Build script"
+        required: false
+        default: "npm run build"
 
 permissions:
   contents: read
@@ -25,3 +29,4 @@ jobs:
     with:
       tag: "${{ github.event.inputs.tag }}"
       node_version: ${{ inputs.node_version || '24' }}
+      script: ${{ inputs.script || 'npm run build' }}
