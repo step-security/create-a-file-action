@@ -44,8 +44,8 @@ jobs:
     name: Create A File
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: step-security/create-a-file-action@v0
+      - uses: actions/checkout@v2
+      - uses: step-security/create-a-file-action@0
         with:
           path: 'src'
           isAbsolutePath: false
