@@ -1,0 +1,46 @@
+name: Auto Upstream Sync
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Explicit upstream tag"
+        required: false
+        default: ""
+      from:
+        description: "Range start tag"
+        required: false
+        default: ""
+      to:
+        description: "Range end tag"
+        required: false
+        default: ""
+      node_version:
+        description: "Node.js version"
+        required: false
+        default: "24"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node_version || '24' }}
+      - name: Run action-pack sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx --yes @step-security/action-pack \
+            --upstream 1arp/create-a-file-action \
+            --repo ${{ github.repository }} \
+            --token "$GITHUB_TOKEN"
