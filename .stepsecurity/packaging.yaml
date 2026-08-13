@@ -1,0 +1,8 @@
+# StepSecurity maintained-action metadata — do not edit by hand unless needed
+schema_version: 1
+mode: import
+upstream: 1arp/create-a-file-action
+last_tag: 0.4.6
+ignore_extra: []
+build:
+  script: npm run build
